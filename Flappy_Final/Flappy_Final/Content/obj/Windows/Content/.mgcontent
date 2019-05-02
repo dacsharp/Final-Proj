@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_se.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_xe.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/brick.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/BrickSound.wav</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bullet.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Button.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Columns.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/myplane_strip3.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Sky.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Stars.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TimesNewRoman20.spritefont</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Trees.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
