@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flappy_Final", "Flappy_Final\Flappy_Final.csproj", "{95761CF1-9F21-449B-A54B-D7DB08308C87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95761CF1-9F21-449B-A54B-D7DB08308C87}.Debug|x86.ActiveCfg = Debug|x86
+		{95761CF1-9F21-449B-A54B-D7DB08308C87}.Debug|x86.Build.0 = Debug|x86
+		{95761CF1-9F21-449B-A54B-D7DB08308C87}.Release|x86.ActiveCfg = Release|x86
+		{95761CF1-9F21-449B-A54B-D7DB08308C87}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D24A6152-C78E-4889-9E19-DD8B786FE330}
+	EndGlobalSection
+EndGlobal
