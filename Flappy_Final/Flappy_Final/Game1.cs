@@ -29,7 +29,7 @@ namespace Flappy_Final
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            //COMMENT HERE
+
             base.Initialize();
         }
 
