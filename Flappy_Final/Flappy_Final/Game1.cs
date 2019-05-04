@@ -9,15 +9,30 @@ namespace Flappy_Final
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
+    /// 
+    //http://www.xnadevelopment.com/tutorials/thestateofthings/thestateofthings.shtml
+    // https://www.reddit.com/r/monogame/comments/35crx8/how_to_add_menus/
+    public enum GameStates
+    {
+        Menu,
+        Playing,
+        Paused
+    }
+
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        private GameStates _gameState;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            // INITIAL GAME STATE UNTIL MENUS ARE CREATED
+            _gameState = GameStates.Playing;
         }
 
         /// <summary>
@@ -66,6 +81,8 @@ namespace Flappy_Final
 
             // TODO: Add your update logic here
 
+            //  Update method for menus here when menus exist
+
             base.Update(gameTime);
         }
 
@@ -79,7 +96,17 @@ namespace Flappy_Final
 
             // TODO: Add your drawing code here
 
-            base.Draw(gameTime);
+            if (_gameState == GameStates.Menu)
+            {
+                //Draw the menu
+            }
+            else if (_gameState == GameStates.Playing)
+            {
+                //Draw the game
+                base.Draw(gameTime);
+            }
+
+           
         }
     }
 }
