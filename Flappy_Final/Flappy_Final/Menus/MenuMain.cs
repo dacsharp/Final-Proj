@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -33,8 +34,18 @@ namespace Flappy_Final
             exitButtonPosition = new Vector2((ScreenGlobals.SCREEN_WIDTH / 2) - 50 , (ScreenGlobals.SCREEN_HEIGHT / 2 ) - 50);
 
             menuCurrState = GameStates.Menu;
-           
+
+
+
         }
+
+          protected void LoadContent(ContentManager Content)
+
+          { 
+            //load the buttonimages into the content pipeline
+            startButton = Content.Load<Texture2D>("TestButtons/PreHoverStart");
+             exitButton = Content.Load<Texture2D>("TestButtons/PreHoverStart");
+          }
 
 
     }
