@@ -31,6 +31,10 @@ namespace Flappy_Final
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            // Screen Size
+            graphics.PreferredBackBufferWidth = ScreenGlobals.SCREEN_WIDTH;
+            graphics.PreferredBackBufferHeight = ScreenGlobals.SCREEN_HEIGHT;
+
             // INITIAL GAME STATE UNTIL MENUS ARE CREATED
             _gameState = GameStates.Playing;
         }
