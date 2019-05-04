@@ -24,7 +24,16 @@ namespace Flappy_Final
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+
+        //=====================================================================
+        // MENU AND STATES
+        //=====================================================================
         private GameStates _gameState;
+
+        private MenuMain _menuMain;
+
+        //=====================================================================
+
 
         public Game1()
         {
@@ -36,7 +45,10 @@ namespace Flappy_Final
             graphics.PreferredBackBufferHeight = ScreenGlobals.SCREEN_HEIGHT;
 
             // INITIAL GAME STATE UNTIL MENUS ARE CREATED
-            _gameState = GameStates.Playing;
+            _gameState = GameStates.Menu;
+
+            _menuMain = new MenuMain();
+
         }
 
         /// <summary>
@@ -48,6 +60,7 @@ namespace Flappy_Final
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            _menuMain.Initialize(spriteBatch, Content);
 
             base.Initialize();
         }
@@ -62,6 +75,8 @@ namespace Flappy_Final
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            _menuMain.LoadContent(Content);
+            
         }
 
         /// <summary>
@@ -99,17 +114,18 @@ namespace Flappy_Final
             GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
 
             if (_gameState == GameStates.Menu)
             {
-                //Draw the menu
+                _menuMain.Draw(spriteBatch);
             }
             else if (_gameState == GameStates.Playing)
             {
                 //Draw the game
                 base.Draw(gameTime);
             }
-
+            spriteBatch.End();
            
         }
     }
