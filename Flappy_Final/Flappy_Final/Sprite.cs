@@ -50,7 +50,7 @@ namespace Flappy_Final
         }
 
         // Load the texture for the sprite using the Content Pipeline
-        public void LoadContent(ContentManager theContentManager, string theAssetName)
+        public virtual void LoadContent(ContentManager theContentManager, string theAssetName)
         {
 
             mSpriteTexture = theContentManager.Load<Texture2D>(theAssetName);

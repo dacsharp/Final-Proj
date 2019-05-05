@@ -15,5 +15,9 @@ namespace Flappy_Final
         public const int SCREEN_HEIGHT = 180 * SCREEN_SCALE;
         public const float BULLET_SPEED_X = GAME_SPEED * 2;
         public const float BULLET_SPEED_Y = GAME_SPEED * 2;
+
+        public const string PLAYER_ASSETNAME = "!$ReBat";
+       public  const string PLAYER_NEXT_ASSETNAME = "!$ReBat_se";
+        public const string PLAYER_FINAL_ASSETNAME = "!$ReBat_xe";
     }
 }

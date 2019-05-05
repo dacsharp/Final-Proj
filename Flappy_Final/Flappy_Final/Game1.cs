@@ -40,6 +40,8 @@ namespace Flappy_Final
         private KeyboardState keyboardState;
         private KeyboardState previousKeyboardState;
 
+        private Player player;
+
 
         public Game1()
         {
@@ -50,9 +52,8 @@ namespace Flappy_Final
             graphics.PreferredBackBufferWidth = ScreenGlobals.SCREEN_WIDTH;
             graphics.PreferredBackBufferHeight = ScreenGlobals.SCREEN_HEIGHT;
 
-            // INITIAL GAME STATE UNTIL MENUS ARE CREATED
+            // INITIAL GAME STATE - MENUS ARE CREATED
             _gameState = GameStates.Menu;
-
             _menuMain = new MenuMain();
 
             // mouse states
@@ -62,6 +63,10 @@ namespace Flappy_Final
             // keyboard states
             keyboardState = Keyboard.GetState();
             previousKeyboardState = keyboardState;
+
+            player = new Player();
+
+            
 
         }
 
@@ -75,6 +80,7 @@ namespace Flappy_Final
         {
             // TODO: Add your initialization logic here
             _menuMain.Initialize(spriteBatch, Content, graphics);
+            player.Initialize(graphics.GraphicsDevice, spriteBatch);
 
             base.Initialize();
         }
@@ -90,6 +96,7 @@ namespace Flappy_Final
 
             // TODO: use this.Content to load your game content here
             _menuMain.LoadContent(Content);
+            player.LoadContent(Content, ScreenGlobals.PLAYER_ASSETNAME);
             
         }
 
@@ -129,11 +136,13 @@ namespace Flappy_Final
                  else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
                 {
                     _gameState = GameStates.Playing;
+                    player.Update(gameTime);
                     
                 }
                  if (_gameState == GameStates.Playing)
                 {
                     _menuMain.MenuCurrState = GameStates.Playing;
+                    
                 }
             }
             else if (_gameState == GameStates.Playing)
@@ -182,6 +191,7 @@ namespace Flappy_Final
             else if (_gameState == GameStates.Playing)
             {
                 //Draw the game
+                player.Draw();
                 base.Draw(gameTime);
             }
             else if (_gameState == GameStates.GameOver)
