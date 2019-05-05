@@ -16,12 +16,13 @@ namespace Flappy_Final
     {
         Menu,
         Playing,
-        Paused
+        Paused,
+        Exiting
     }
 
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics { get; }
         SpriteBatch spriteBatch;
 
 
@@ -33,7 +34,8 @@ namespace Flappy_Final
         private MenuMain _menuMain;
 
         //=====================================================================
-
+        private MouseState mouseState;
+        private MouseState previousMouseState;
 
         public Game1()
         {
@@ -49,6 +51,11 @@ namespace Flappy_Final
 
             _menuMain = new MenuMain();
 
+            // mouse states
+            IsMouseVisible = true;
+            mouseState = Mouse.GetState();
+            previousMouseState = mouseState;
+
         }
 
         /// <summary>
@@ -60,7 +67,7 @@ namespace Flappy_Final
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _menuMain.Initialize(spriteBatch, Content);
+            _menuMain.Initialize(spriteBatch, Content, graphics);
 
             base.Initialize();
         }
@@ -99,9 +106,41 @@ namespace Flappy_Final
                 Exit();
 
             // TODO: Add your update logic here
+            mouseState = Mouse.GetState();
 
             //  Update method for menus here when menus exist
 
+            if (_gameState == GameStates.Menu)
+            {
+                IsMouseVisible = true;
+                
+                 if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+                {
+                    
+                    _gameState = _menuMain.MouseClicked(mouseState.X, mouseState.Y);
+                }
+            }
+            else if (_gameState == GameStates.Playing)
+            {
+                IsMouseVisible = false;
+
+                // play game logic here
+                ;
+            }
+            else if (_gameState == GameStates.Paused)
+            {
+                ;
+            }
+            if (_gameState == GameStates.Exiting)
+            {
+                Exit();
+            }
+            else
+            {
+                ;
+                
+            }
+            previousMouseState = mouseState;
             base.Update(gameTime);
         }
 
