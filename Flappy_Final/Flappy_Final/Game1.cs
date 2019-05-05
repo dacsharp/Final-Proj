@@ -17,6 +17,7 @@ namespace Flappy_Final
         Menu,
         Playing,
         Paused,
+        GameOver,
         Exiting
     }
 
@@ -36,6 +37,9 @@ namespace Flappy_Final
         //=====================================================================
         private MouseState mouseState;
         private MouseState previousMouseState;
+        private KeyboardState keyboardState;
+        private KeyboardState previousKeyboardState;
+
 
         public Game1()
         {
@@ -55,6 +59,9 @@ namespace Flappy_Final
             IsMouseVisible = true;
             mouseState = Mouse.GetState();
             previousMouseState = mouseState;
+            // keyboard states
+            keyboardState = Keyboard.GetState();
+            previousKeyboardState = keyboardState;
 
         }
 
@@ -107,7 +114,7 @@ namespace Flappy_Final
 
             // TODO: Add your update logic here
             mouseState = Mouse.GetState();
-
+            keyboardState = Keyboard.GetState();
             //  Update method for menus here when menus exist
 
             if (_gameState == GameStates.Menu)
@@ -119,6 +126,15 @@ namespace Flappy_Final
                     
                     _gameState = _menuMain.MouseClicked(mouseState.X, mouseState.Y);
                 }
+                 else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
+                {
+                    _gameState = GameStates.Playing;
+                    
+                }
+                 if (_gameState == GameStates.Playing)
+                {
+                    _menuMain.MenuCurrState = GameStates.Playing;
+                }
             }
             else if (_gameState == GameStates.Playing)
             {
@@ -128,6 +144,10 @@ namespace Flappy_Final
                 ;
             }
             else if (_gameState == GameStates.Paused)
+            {
+                ;
+            }
+            else if (_gameState == GameStates.GameOver)
             {
                 ;
             }
@@ -163,6 +183,10 @@ namespace Flappy_Final
             {
                 //Draw the game
                 base.Draw(gameTime);
+            }
+            else if (_gameState == GameStates.GameOver)
+            {
+                ;
             }
             spriteBatch.End();
            
