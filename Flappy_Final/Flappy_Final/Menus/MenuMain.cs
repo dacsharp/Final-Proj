@@ -178,9 +178,12 @@ namespace Flappy_Final
             return MenuCurrState;
 
         }
-        
+
 
         // TEST FILL
+
+        // spriteBatch.Draw(textureFill(), Rectangle, Color.Red);
+
         Texture2D textureFill()
         {
             Texture2D texture = new Texture2D(graphics.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
