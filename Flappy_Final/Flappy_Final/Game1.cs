@@ -157,6 +157,11 @@ namespace Flappy_Final
                 // play game logic here
                 player.Update(gameTime);
 
+              if( (int)Player.pState.Dead == player.getCurrState())
+                {
+                   _gameState = GameStates.GameOver;
+                }
+
             }
             else if (_gameState == GameStates.Paused)
             {

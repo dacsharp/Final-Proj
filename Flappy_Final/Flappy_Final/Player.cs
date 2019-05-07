@@ -126,6 +126,7 @@ namespace Flappy_Final
             mPreviousKeyboardState = aCurrentKeyboardState;
             mPreviousGamepadState = aCurrentGamepadState;
 
+            UpdateMovement(aCurrentKeyboardState);
             //CheckBulletBrickHit();
 
             base.Update(theGameTime, mSpeed, mDirection);
@@ -319,11 +320,15 @@ namespace Flappy_Final
             // the frame number we currently want to display. The y value is always 0 (for horizontal
             // sprite sheets) and then the x width and y height of the actual frame.
 
-            if (mSpriteTexture != null && mCurrentState == pState.Flying)
-                spriteBatch.Draw(mSpriteTexture, Position,
-                    new Rectangle(0 + (FrameSize * FrameNum),
-                    (int)mCurrentFacing * FrameSize, FrameSize, mSpriteTexture.Height / 4),
-                    Color.White, rotation, Vector2.Zero, Scale, SpriteEffects.None, 0.0f);
+            if (mSpriteTexture != null && (mCurrentState == pState.Flying || mCurrentState == pState.Jumping))
+            {
+                Vector2 Origin = new Vector2((float)mSpriteTexture.Height / 4,(float) mSpriteTexture.Width / 4);
+                Rectangle spriteRect = new Rectangle(0 + (FrameSize * FrameNum),
+                    (int)mCurrentFacing * FrameSize, FrameSize, mSpriteTexture.Height / 4);
+                spriteBatch.Draw(mSpriteTexture, Position, spriteRect,
+                    Color.White, rotation, Origin, Scale, SpriteEffects.None, 0.0f);
+                //spriteBatch.Draw(textureFillRect(), Position, spriteRect, Color.Red, rotation, Origin, Scale, SpriteEffects.None, 0.0f);
+            }
 
 
             //if (fallingBrick != null)
@@ -529,7 +534,7 @@ namespace Flappy_Final
         {
             return (int)pState.Pause;
         }
-        enum Facing
+        private enum Facing
         {
             Down,
             Left,
@@ -538,12 +543,20 @@ namespace Flappy_Final
         }
 
        
-        enum pState
+        public enum pState
         {
             Flying,
             Jumping,
             Dead,
             Pause
+        }
+
+        // TEST - spriteBatch.Draw(textureFill(), Rectangle, Color.Red);
+        private Texture2D textureFillRect()
+        {
+            Texture2D texture = new Texture2D(graphicsDevice, 1, 1, false, SurfaceFormat.Color);
+            texture.SetData<Color>(new Color[] { Color.White });
+            return texture;
         }
     }
 }
