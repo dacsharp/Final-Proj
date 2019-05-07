@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Backgrounds.cs" />
     <Compile Include="Brick.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Game1.cs" />
