@@ -34,6 +34,7 @@ namespace Flappy_Final
         private GameStates _gameState;
 
         private MenuMain _menuMain;
+        private MenuGameOver _menuGameOver;
         private bool started { get; set; }
         //=====================================================================
         private MouseState mouseState;
@@ -41,7 +42,7 @@ namespace Flappy_Final
         private KeyboardState keyboardState;
         private KeyboardState previousKeyboardState;
 
-        private Player player;
+        private Player _player;
 
 
         public Game1()
@@ -56,6 +57,7 @@ namespace Flappy_Final
             // INITIAL GAME STATE - MENUS ARE CREATED
             _gameState = GameStates.Menu;
             _menuMain = new MenuMain();
+            _menuGameOver = new MenuGameOver();
             started = false;
 
             // mouse states
@@ -66,7 +68,7 @@ namespace Flappy_Final
             keyboardState = Keyboard.GetState();
             previousKeyboardState = keyboardState;
 
-            player = new Player(spriteBatch);
+            _player = new Player(spriteBatch);
 
             
 
@@ -82,7 +84,9 @@ namespace Flappy_Final
         {
             // TODO: Add your initialization logic here
             _menuMain.Initialize(spriteBatch, Content, graphics);
-            player.Initialize(graphics.GraphicsDevice);
+            _player.Initialize(graphics.GraphicsDevice);
+            _menuGameOver.Initialize(spriteBatch, Content, graphics);
+
 
             base.Initialize();
         }
@@ -98,7 +102,8 @@ namespace Flappy_Final
 
             // TODO: use this.Content to load your game content here
             _menuMain.LoadContent(Content);
-            player.LoadContent(Content, ScreenGlobals.PLAYER_ASSETNAME);
+            _player.LoadContent(Content, ScreenGlobals.PLAYER_ASSETNAME);
+            _menuGameOver.LoadContent(Content);
             
         }
 
@@ -137,17 +142,20 @@ namespace Flappy_Final
                     if (_gameState == GameStates.Playing)
                     {
                         started = true;
+                        _player.ResetPlayer();
                     }
                 }
                  // space to start
                  else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
                 {
                     _gameState = GameStates.Playing;
-                                        
+                    _player.ResetPlayer();
+
                 }
                  if (_gameState == GameStates.Playing)
                 {
                     _menuMain.MenuCurrState = GameStates.Playing;
+                    _player.ResetPlayer();
                 }
             }
             else if (_gameState == GameStates.Playing)
@@ -155,9 +163,9 @@ namespace Flappy_Final
                 IsMouseVisible = false;
 
                 // play game logic here
-                player.Update(gameTime);
+                _player.Update(gameTime);
 
-              if( (int)Player.pState.Dead == player.getCurrState())
+              if( (int)Player.pState.Dead == _player.getCurrState())
                 {
                    _gameState = GameStates.GameOver;
                 }
@@ -169,7 +177,27 @@ namespace Flappy_Final
             }
             else if (_gameState == GameStates.GameOver)
             {
-                ;
+                IsMouseVisible = true;
+                // clicked to start
+                if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+                {
+
+                    _gameState = _menuGameOver.MouseClicked(mouseState.X, mouseState.Y);
+                    if (_gameState == GameStates.Menu)
+                    {
+                        started = false;
+                    }
+                }
+                // space to start
+                else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
+                {
+                    _gameState = GameStates.Menu;
+
+                }
+                if (_gameState == GameStates.Menu)
+                {
+                    _menuGameOver.MenuCurrState = GameStates.Menu;
+                }
             }
             if (_gameState == GameStates.Exiting)
             {
@@ -203,12 +231,12 @@ namespace Flappy_Final
             {
                 //Draw the game
                 //base.Draw(gameTime);
-                player.Draw(spriteBatch);
+                _player.Draw(spriteBatch);
 
             }
             else if (_gameState == GameStates.GameOver)
             {
-                ;
+                _menuGameOver.Draw(spriteBatch);
             }
             spriteBatch.End();
            

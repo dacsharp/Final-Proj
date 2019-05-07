@@ -73,13 +73,48 @@ namespace Flappy_Final
 
         private int score = 0;
 
-
+        private bool Stationary = true;
 
 
         ContentManager content;
         SpriteBatch spriteBatch;
         public Player(SpriteBatch inSpritebatch)
-        {spriteBatch = inSpritebatch; }
+        {
+            spriteBatch = inSpritebatch;
+            Stationary = true; 
+        }
+
+        public void ResetPlayer()
+        {
+            rotation = 0;
+            rotationVelocity = 0;
+            FrameNum = 0;
+            mDirection = Vector2.Zero;
+            mSpeed = Vector2.Zero;
+            Stationary = true;
+            mCurrentFacing = Facing.Right;
+            mCurrentState = pState.Flying;
+            score = 0;
+            AssetName = PLAYER_ASSETNAME;
+            this.mSpriteTexture = content.Load<Texture2D>(AssetName);
+            Size = new Rectangle(0, 0, (int)(mSpriteTexture.Width * Scale), (int)(mSpriteTexture.Height * Scale));
+            Visible = true;
+            //Since the player "owns" their bullets, when we update the player,
+            //we update all of the bullets, including drawing them
+            foreach (Bullet aBullet in mBullets)
+            {
+                aBullet.LoadContent(content);
+            }
+
+            Position = new Vector2(START_POSITION_X, START_POSITION_Y);
+            //LoadFallingBrick();
+
+
+
+           // base.LoadContent(content, PLAYER_ASSETNAME);
+
+
+        }
 
         public void Initialize(GraphicsDevice gDevice)
         {
@@ -97,14 +132,11 @@ namespace Flappy_Final
             // Origin of the sprite
             float orX = (float)mSpriteTexture.Width / 2;
             float orY = (float)mSpriteTexture.Height / 2;
-            Vector2 Origin = new Vector2(orX, orY);
+            Origin = new Vector2(orX, orY);
             Visible = true;
             //Since the player "owns" their bullets, when we update the player,
             //we update all of the bullets, including drawing them
-            foreach (Bullet aBullet in mBullets)
-            {
-                aBullet.LoadContent(theContentManager);
-            }
+           
 
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
             //LoadFallingBrick();
@@ -120,13 +152,27 @@ namespace Flappy_Final
             KeyboardState aCurrentKeyboardState = Keyboard.GetState();
             GamePadState aCurrentGamepadState = GamePad.GetState(PlayerIndex.One);
 
-            UpdateMovement(aCurrentKeyboardState);
-            UpdateBullet(theGameTime, aCurrentKeyboardState, aCurrentGamepadState);
+            //UpdateMovement(aCurrentKeyboardState);
 
+            if (Stationary)
+            {
+                if (((aCurrentKeyboardState.IsKeyDown(Keys.Space) == true 
+                    && mPreviousKeyboardState.IsKeyDown(Keys.Space) == false)))
+                    
+                {
+                    Stationary = false;
+                }
+
+                    
+            }
+           
+            if (!Stationary)
+                UpdateMovement(aCurrentKeyboardState);
+
+            UpdateBullet(theGameTime, aCurrentKeyboardState, aCurrentGamepadState);
             mPreviousKeyboardState = aCurrentKeyboardState;
             mPreviousGamepadState = aCurrentGamepadState;
 
-            UpdateMovement(aCurrentKeyboardState);
             //CheckBulletBrickHit();
 
             base.Update(theGameTime, mSpeed, mDirection);
@@ -145,6 +191,7 @@ namespace Flappy_Final
             if (Position.Y < 0)
             {
                 Position.Y = 0;
+               mCurrentState =  pState.Dead;
             }
             /* End player off screen correction */
 
@@ -322,6 +369,7 @@ namespace Flappy_Final
 
             if (mSpriteTexture != null && (mCurrentState == pState.Flying || mCurrentState == pState.Jumping))
             {
+                // SET origin separately for facing and rotation?
                 Vector2 Origin = new Vector2((float)mSpriteTexture.Height / 4,(float) mSpriteTexture.Width / 4);
                 Rectangle spriteRect = new Rectangle(0 + (FrameSize * FrameNum),
                     (int)mCurrentFacing * FrameSize, FrameSize, mSpriteTexture.Height / 4);
