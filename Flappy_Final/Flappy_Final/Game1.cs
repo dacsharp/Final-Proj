@@ -20,6 +20,7 @@ namespace Flappy_Final
         GameOver,
         Exiting
     }
+    
 
     public class Game1 : Game
     {
@@ -33,7 +34,7 @@ namespace Flappy_Final
         private GameStates _gameState;
 
         private MenuMain _menuMain;
-
+        private bool started { get; set; }
         //=====================================================================
         private MouseState mouseState;
         private MouseState previousMouseState;
@@ -55,6 +56,7 @@ namespace Flappy_Final
             // INITIAL GAME STATE - MENUS ARE CREATED
             _gameState = GameStates.Menu;
             _menuMain = new MenuMain();
+            started = false;
 
             // mouse states
             IsMouseVisible = true;
@@ -64,7 +66,7 @@ namespace Flappy_Final
             keyboardState = Keyboard.GetState();
             previousKeyboardState = keyboardState;
 
-            player = new Player();
+            player = new Player(spriteBatch);
 
             
 
@@ -80,7 +82,7 @@ namespace Flappy_Final
         {
             // TODO: Add your initialization logic here
             _menuMain.Initialize(spriteBatch, Content, graphics);
-            player.Initialize(graphics.GraphicsDevice, spriteBatch);
+            player.Initialize(graphics.GraphicsDevice);
 
             base.Initialize();
         }
@@ -127,22 +129,25 @@ namespace Flappy_Final
             if (_gameState == GameStates.Menu)
             {
                 IsMouseVisible = true;
-                
+                // clicked to start
                  if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                 {
                     
                     _gameState = _menuMain.MouseClicked(mouseState.X, mouseState.Y);
+                    if (_gameState == GameStates.Playing)
+                    {
+                        started = true;
+                    }
                 }
+                 // space to start
                  else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
                 {
                     _gameState = GameStates.Playing;
-                    player.Update(gameTime);
-                    
+                                        
                 }
                  if (_gameState == GameStates.Playing)
                 {
                     _menuMain.MenuCurrState = GameStates.Playing;
-                    
                 }
             }
             else if (_gameState == GameStates.Playing)
@@ -150,7 +155,8 @@ namespace Flappy_Final
                 IsMouseVisible = false;
 
                 // play game logic here
-                ;
+                player.Update(gameTime);
+
             }
             else if (_gameState == GameStates.Paused)
             {
@@ -191,8 +197,9 @@ namespace Flappy_Final
             else if (_gameState == GameStates.Playing)
             {
                 //Draw the game
-                player.Draw();
-                base.Draw(gameTime);
+                //base.Draw(gameTime);
+                player.Draw(spriteBatch);
+
             }
             else if (_gameState == GameStates.GameOver)
             {

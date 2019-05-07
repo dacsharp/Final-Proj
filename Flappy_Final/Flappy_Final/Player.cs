@@ -78,24 +78,21 @@ namespace Flappy_Final
 
         ContentManager content;
         SpriteBatch spriteBatch;
-        public Player()
-        {
-            ;
-        }
+        public Player(SpriteBatch inSpritebatch)
+        {spriteBatch = inSpritebatch; }
 
-        public void Initialize(GraphicsDevice gDevice, SpriteBatch inSpritebatch)
+        public void Initialize(GraphicsDevice gDevice)
         {
             graphicsDevice = gDevice;
             FrameSize = PLAYER_FRAME_SIZE; // the player sprite frames are 48x48
-            spriteBatch = inSpritebatch;
 
         }
 
         public override void LoadContent(ContentManager theContentManager, string theAssetName)
         {
-            content = theContentManager;
-            mSpriteTexture = content.Load<Texture2D>(theAssetName);
+            content =  theContentManager;
             AssetName = theAssetName;
+           this.mSpriteTexture = content.Load<Texture2D>(AssetName);
             Size = new Rectangle(0, 0, (int)(mSpriteTexture.Width * Scale), (int)(mSpriteTexture.Height * Scale));
             // Origin of the sprite
             float orX = (float)mSpriteTexture.Width / 2;
@@ -307,7 +304,7 @@ namespace Flappy_Final
         //                    );
         //}
 
-        public void Draw()
+        public override void Draw(SpriteBatch spriteBatch)
         {
 
             //CheckBulletBrickHit();
@@ -322,11 +319,12 @@ namespace Flappy_Final
             // the frame number we currently want to display. The y value is always 0 (for horizontal
             // sprite sheets) and then the x width and y height of the actual frame.
 
-            //if (mSpriteTexture != null && mCurrentState == pState.Flying)
-            //spriteBatch.Draw(mSpriteTexture, Position,
-            //    new Rectangle(0 + (FrameSize * FrameNum),
-            //    (int)mCurrentFacing * FrameSize, FrameSize, mSpriteTexture.Height / 4),
-            //    Color.White, rotation, Vector2.Zero, Scale, SpriteEffects.None, 0.0f);
+            if (mSpriteTexture != null && mCurrentState == pState.Flying)
+                spriteBatch.Draw(mSpriteTexture, Position,
+                    new Rectangle(0 + (FrameSize * FrameNum),
+                    (int)mCurrentFacing * FrameSize, FrameSize, mSpriteTexture.Height / 4),
+                    Color.White, rotation, Vector2.Zero, Scale, SpriteEffects.None, 0.0f);
+
 
             //if (fallingBrick != null)
             //    fallingBrick.Draw();
