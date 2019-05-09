@@ -120,7 +120,7 @@ namespace Flappy_Final
             
             string scoreMsg = "Score: " + _score.ToString("00000");
             Vector2 space = labelFont.MeasureString(scoreMsg);
-            spriteBatch.DrawString(labelFont, scoreMsg, new Vector2((ScreenGlobals.SCREEN_WIDTH - space.X) / 2, ScreenGlobals.SCREEN_HEIGHT - 40), Color.White);
+            spriteBatch.DrawString(labelFont, scoreMsg, new Vector2((ScreenGlobals.SCREEN_WIDTH - space.X) / 2, 40), Color.White);
 
 
             // TESTS FOR RECTS
