@@ -14,6 +14,9 @@ namespace Flappy_Final
     {
         public GameStates MenuCurrState { get; set; }
         private GameStates MenuPrevState;
+        // SCORE
+        private int _score;
+        Vector2 _scorePos;
 
         public bool isVisible { get; set; }
 
@@ -61,6 +64,8 @@ namespace Flappy_Final
             this.spriteBatch = inSpriteBatch; // pass the sprite batch to the class
             this.graphics = graphics;
 
+            _scorePos = new Vector2(ScreenGlobals.SCREEN_WIDTH/2, ScreenGlobals.SCREEN_HEIGHT - 50);
+
             startButtonPosition = new Vector2((ScreenGlobals.SCREEN_WIDTH / 2), (ScreenGlobals.SCREEN_HEIGHT / 2) + 50);
             middleOfStart = new Vector2(startButtonPosition.X / 2, startButtonPosition.Y / 2);
 
@@ -86,12 +91,11 @@ namespace Flappy_Final
 
         }
 
-        public void Update()
+        public void Update(int inScore)
         {
-            if (isVisible)
-            {
-                ;
-            }
+       
+                _score = inScore;
+            
 
         }
 
@@ -113,15 +117,19 @@ namespace Flappy_Final
             spriteBatch.Draw(exitButton, exitButtonPosition, null,
                 Color.White, 0.0f, new Vector2(buttonWidth / 2f, buttonHeight / 2f),
                 buttonScale, SpriteEffects.None, 0);
+            
+            string scoreMsg = "Score: " + _score.ToString("00000");
+            Vector2 space = labelFont.MeasureString(scoreMsg);
+            spriteBatch.DrawString(labelFont, scoreMsg, new Vector2((ScreenGlobals.SCREEN_WIDTH - space.X) / 2, ScreenGlobals.SCREEN_HEIGHT - 40), Color.White);
 
 
             // TESTS FOR RECTS
-            if (mouseClickRect != null)
-                spriteBatch.Draw(textureFill(), mouseClickRect, Color.White);
-            if (startRect != null)
-                spriteBatch.Draw(textureFill(), startRect, Color.Blue);
-            if (exitRect != null)
-                spriteBatch.Draw(textureFill(), exitRect, Color.Red);
+            //if (mouseClickRect != null)
+            //    spriteBatch.Draw(textureFill(), mouseClickRect, Color.White);
+            //if (startRect != null)
+            //    spriteBatch.Draw(textureFill(), startRect, Color.Blue);
+            //if (exitRect != null)
+            //    spriteBatch.Draw(textureFill(), exitRect, Color.Red);
 
 
 

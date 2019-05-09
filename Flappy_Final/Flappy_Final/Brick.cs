@@ -12,7 +12,7 @@ namespace Flappy_Final
         public float Y { get; set; } // y position of brick on screen
         public float Width { get; set; } // width of brick
         public float Height { get; set; } // height of brick
-        public bool Visible { get; set; } // does brick still exist
+
         private Color color;
 
         public bool isFire { get; set; }

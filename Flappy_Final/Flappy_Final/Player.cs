@@ -78,6 +78,10 @@ namespace Flappy_Final
         private sbyte bulletFlip = 1;
 
         private int score = 0;
+        public int getScore()
+        {
+            return score;
+        }
 
         private bool Stationary = true;
 

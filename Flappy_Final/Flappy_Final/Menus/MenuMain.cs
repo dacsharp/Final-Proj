@@ -116,12 +116,12 @@ namespace Flappy_Final
             
             
             // TESTS FOR RECTS
-            if (mouseClickRect != null)
-                spriteBatch.Draw(textureFill(), mouseClickRect, Color.White);
-            if (startRect != null)
-                spriteBatch.Draw(textureFill(), startRect, Color.Blue);
-            if (exitRect != null)
-                spriteBatch.Draw(textureFill(), exitRect, Color.Red);
+            //if (mouseClickRect != null)
+            //    spriteBatch.Draw(textureFill(), mouseClickRect, Color.White);
+            //if (startRect != null)
+            //    spriteBatch.Draw(textureFill(), startRect, Color.Blue);
+            //if (exitRect != null)
+            //    spriteBatch.Draw(textureFill(), exitRect, Color.Red);
 
 
 

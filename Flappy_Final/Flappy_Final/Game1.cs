@@ -289,6 +289,7 @@ namespace Flappy_Final
             else if (_gameState == GameStates.GameOver)
             {
                 IsMouseVisible = true;
+                _menuGameOver.Update(_player.getScore());
                 // clicked to start
                 if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                 {
