@@ -298,7 +298,7 @@ namespace Flappy_Final
                                         {
                                             bullet.Visible = false;
                                         }
-                                        hitBrick = true;
+                                      
                                         break;
                                     }
                                 }
