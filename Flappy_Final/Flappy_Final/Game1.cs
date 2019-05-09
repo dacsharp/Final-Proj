@@ -41,8 +41,11 @@ namespace Flappy_Final
         private MouseState previousMouseState;
         private KeyboardState keyboardState;
         private KeyboardState previousKeyboardState;
-
+        //=====================================================================
+        //          PLAYER AND INTERACTIVE ENVIRONMENT
+        //=====================================================================
         private Player _player;
+        private Brick _brickOne;
         //======================================================================
 
 
@@ -87,7 +90,9 @@ namespace Flappy_Final
             keyboardState = Keyboard.GetState();
             previousKeyboardState = keyboardState;
 
+            // Player and Interactive Environment
             _player = new Player(spriteBatch);
+            _brickOne = new Brick();
 
             
 
@@ -105,7 +110,7 @@ namespace Flappy_Final
             _menuMain.Initialize(spriteBatch, Content, graphics);
             _player.Initialize(graphics.GraphicsDevice);
             _menuGameOver.Initialize(spriteBatch, Content, graphics);
-
+            _brickOne.Initialize(graphics.GraphicsDevice);
 
             base.Initialize();
         }
@@ -123,7 +128,7 @@ namespace Flappy_Final
             _menuMain.LoadContent(Content);
             _player.LoadContent(Content, ScreenGlobals.PLAYER_ASSETNAME);
             _menuGameOver.LoadContent(Content);
-
+            _brickOne.LoadContent(Content);
 
 
         
@@ -145,8 +150,6 @@ namespace Flappy_Final
             Stars2 = new Stars(Content.Load<Texture2D>("Stars"), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //=======================================================================================================
-
-
 
 
 
@@ -239,6 +242,12 @@ namespace Flappy_Final
 
                 // play game logic here
                 _player.Update(gameTime);
+                _brickOne.Update(gameTime);
+                if(_brickOne.GetCurrState() == Brick.State.OffScreen || _brickOne.GetCurrState() == Brick.State.Destroyed)
+                {
+                    _brickOne = new Brick();
+                    _brickOne.LoadContent(Content);
+                }
 
               if( (int)Player.pState.Dead == _player.getCurrState())
                 {
@@ -340,7 +349,7 @@ namespace Flappy_Final
                 Stars2.Draw(spriteBatch);
                 //=========================================
 
-
+                _brickOne.Draw(spriteBatch);
                 _player.Draw(spriteBatch);
 
             }
