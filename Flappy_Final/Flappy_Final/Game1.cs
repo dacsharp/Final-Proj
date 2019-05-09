@@ -64,6 +64,11 @@ namespace Flappy_Final
 
         Stars Stars1;
         Stars Stars2;
+
+        ScrollingWalls TopWall;
+        ScrollingWalls BotWall;
+
+
         //===========================================================================
 
 
@@ -150,8 +155,11 @@ namespace Flappy_Final
             Stars2 = new Stars(Content.Load<Texture2D>("Stars"), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //=======================================================================================================
-
-
+            //WALLS
+            //=====================================================================================
+            TopWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(230, 85), new Rectangle(160, 0, 32, 96));
+            BotWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(230, 85), new Rectangle(160, 0, 32, 96));
+            //=======================================================================================
 
         }
 
@@ -198,6 +206,14 @@ namespace Flappy_Final
 
             if (Stars2.rectangle.X + Stars2.texture.Width <= 0)
                 Stars2.rectangle.X = Stars1.rectangle.X + Stars1.texture.Width;
+            //==================================================================================
+
+           
+
+
+
+
+
             //===================================================================================
 
 
