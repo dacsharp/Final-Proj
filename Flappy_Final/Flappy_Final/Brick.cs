@@ -80,21 +80,21 @@ namespace Flappy_Final
             Height = 50;
             Origin = new Vector2(Width / 2, Height / 2);
             Visible = true;
-
-            Color colorIn = new Color(178, 34, 34, 255);
-            if (colorIn == Color.Firebrick)
+            int blueRed = GenRandInt();
+            
+            if (blueRed == 1)
             {
-                this.color = Color.Firebrick;
+                color = Color.Firebrick;
                 isFire = true;
             }
-            else if (colorIn == Color.Blue)
+            else if (blueRed == 0)
             {
-                this.color = Color.Blue;
+                color = Color.Blue;
                 isFire = false;
             }
             else
             {
-                this.color = Color.Firebrick;
+                color = Color.Firebrick;
                 isFire = true;
             }
 

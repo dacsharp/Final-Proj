@@ -55,7 +55,7 @@ namespace Flappy_Final
         KeyboardState mPreviousKeyboardState;
         GamePadState mPreviousGamepadState;
 
-
+        private SoundEffect brickSound;
 
         private int FrameNum = 0;
 
@@ -134,12 +134,11 @@ namespace Flappy_Final
             float orY = (float)mSpriteTexture.Height / 2;
             Origin = new Vector2(orX, orY);
             Visible = true;
-            //Since the player "owns" their bullets, when we update the player,
-            //we update all of the bullets, including drawing them
+          
            
 
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
-            //LoadFallingBrick();
+            brickSound = content.Load<SoundEffect>("BrickSound");
 
 
 
@@ -237,75 +236,75 @@ namespace Flappy_Final
 
         }
 
-        //private void CheckBulletBrickHit()
-        //{
-        //    bool hitBrick = false;
+        private void CheckBulletBrickHit(Brick brick)
+        {
+            bool hitBrick = false;
 
-        //    if (hitBrick == false)
-        //    {
-        //        // check player and brick detection
-        //        if (fallingBrick.Visible)
-        //        {
+            if (hitBrick == false)
+            {
+                // check player and brick detection
+                if (brick.Visible)
+                {
 
-        //            // loop through bulltets
-        //            if (mBullets.Count >= 1)
-        //                foreach (Bullet bullet in mBullets)
-        //                {
-        //                    if (bullet != null)
-        //                        if (fallingBrick.Visible)
-        //                        {
-        //                            //Brick 
-        //                            //Each brick is 16 x 50
-        //                            int orY = (int)fallingBrick.Origin.Y;
-        //                            int orX = (int)fallingBrick.Origin.X;
-        //                            Rectangle BrickRect = new Rectangle(
-        //                                (int)fallingBrick.GetX(),
-        //                                (int)fallingBrick.GetY() - orY - 1,
-        //                                (int)16,
-        //                                (int)50
-        //                                );
-        //                            // bullet
-        //                            Rectangle bulletRect = new Rectangle(
-        //                                (int)bullet.Position.X,
-        //                                (int)bullet.Position.Y,
-        //                                (int)bullet.Size.Width, (int)bullet.Size.Height);
-        //                            if (HitTest(bulletRect, BrickRect))
-        //                            {
-        //                                //
-        //                                // if both fire
-        //                                GameContent gameContent = new GameContent(mContentManager);
-        //                                if (bullet.isFire() == true && fallingBrick.fire == true)
-        //                                {
-        //                                    PlaySound(gameContent.brickSound);
-        //                                    fallingBrick.Visible = false;
-        //                                    bullet.Visible = false;
+                    // loop through bulltets
+                    if (mBullets.Count >= 1)
+                        foreach (Bullet bullet in mBullets)
+                        {
+                            if (bullet != null)
+                                if (brick.Visible)
+                                {
+                                    //Brick 
+                                    //Each brick is 16 x 50
+                                    int orY = (int)brick.Origin.Y;
+                                    int orX = (int)brick.Origin.X;
+                                    Rectangle BrickRect = new Rectangle(
+                                        (int)brick.X,
+                                        (int)brick.Y - orY - 1,
+                                        (int)16,
+                                        (int)50
+                                        );
+                                    // bullet
+                                    Rectangle bulletRect = new Rectangle(
+                                        (int)bullet.Position.X,
+                                        (int)bullet.Position.Y,
+                                        (int)bullet.Size.Width, (int)bullet.Size.Height);
+                                    if (HitTest(bulletRect, BrickRect))
+                                    {
+                                        //
+                                        // if both fire
+                                        
+                                        if (bullet.isFire() == true && brick.isFire == true)
+                                        {
+                                            PlaySound(brickSound);
+                                            brick.Visible = false;
+                                            bullet.Visible = false;
 
-        //                                    ++score;
+                                            ++score;
 
-        //                                }
-        //                                // if both ice
-        //                                else if ((!bullet.isFire() == true) && (!fallingBrick.fire == true))
-        //                                {
-        //                                    PlaySound(gameContent.brickSound);
-        //                                    fallingBrick.Visible = false;
-        //                                    bullet.Visible = false;
+                                        }
+                                        // if both ice
+                                        else if ((!bullet.isFire() == true) && (!brick.isFire == true))
+                                        {
+                                            PlaySound(brickSound);
+                                            brick.Visible = false;
+                                            bullet.Visible = false;
 
-        //                                    ++score;
+                                            ++score;
 
-        //                                }
-        //                                else // bullet hit but was wrong type
-        //                                {
-        //                                    bullet.Visible = false;
-        //                                }
-        //                                hitBrick = true;
-        //                                break;
-        //                            }
-        //                        }
+                                        }
+                                        else // bullet hit but was wrong type
+                                        {
+                                            bullet.Visible = false;
+                                        }
+                                        hitBrick = true;
+                                        break;
+                                    }
+                                }
 
-        //                }
-        //        }
-        //    }
-        //}
+                        }
+                }
+            }
+        }
 
         //private void CheckPlayerBrickCrash()
         //{
@@ -339,17 +338,6 @@ namespace Flappy_Final
         //        }
 
         //    }
-        //}
-        //private void LoadFallingBrick()
-        //{
-        //    GameContent gameContent = new GameContent(mContentManager);
-        //    SpriteBatch sB = new SpriteBatch(graphicsDevice);
-        //    // 
-        //    fallingBrick = new BrickDrop(
-        //                    (float)2f * (ScreenGlobals.SCREEN_WIDTH / 3f),
-        //                    (float)(ScreenGlobals.SCREEN_HEIGHT / 3f),
-        //                    sB, gameContent
-        //                    );
         //}
 
         public override void Draw(SpriteBatch spriteBatch)
