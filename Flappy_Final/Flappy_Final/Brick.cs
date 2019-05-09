@@ -27,7 +27,7 @@ namespace Flappy_Final
         }
 
         
-        State currState { get; set; }
+        public State currState { get; set; }
         public State GetCurrState()
         {
             return currState;
