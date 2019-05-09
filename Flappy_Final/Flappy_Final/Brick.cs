@@ -54,12 +54,16 @@ namespace Flappy_Final
 
         private Texture2D imgBrick; // cached image of brick
         private SpriteBatch spriteBatch; // allows us to write on backbuffer when we need to draw self
-//        private ContentManager content;
-
+                                         //        private ContentManager content;
+        private Rectangle brickRect;
+        public Rectangle getBrickRect()
+        {
+            return brickRect;
+        }
 
         public void Initialize(GraphicsDevice gDevice)
         {
-            graphicsDevice = gDevice;
+            graphicsDevice =  (gDevice);
 
         }
 
@@ -112,7 +116,10 @@ namespace Flappy_Final
 
 
             Position = new Vector2(GenRandX(), GenRandY());
-
+            brickRect = new Rectangle((int)this.Position.X - FrameSize,
+                    (int)(Position.Y - Size.Height / 4.0f + 10),
+                    (int)((float)Size.Width),
+                    (int)((float)Size.Height));
 
         }
 
@@ -125,6 +132,9 @@ namespace Flappy_Final
                 spriteBatch.Draw(imgBrick, new Vector2(X, Y),
                     null, color, 0.0f,
                     new Vector2(Width / 2f, Height / 2f), 1.0f, SpriteEffects.None, 0);
+
+
+                //spriteBatch.Draw(textureFillRect(), brickRect, Color.Green);
             }
           
         }
@@ -141,9 +151,21 @@ namespace Flappy_Final
                 Visible = false;
 
             }
+            if (currState == State.Destroyed)
+            {
+                Visible = false;
+            }
 
-
+            brickRect = new Rectangle((int)(X - Size.Width/2.0f),
+                   (int)(Y - Size.Height/2.0f),
+                   (int)((float)Size.Width),
+                   (int)((float)Size.Height));
         }
-
+        public Texture2D textureFillRect()
+        {
+            Texture2D texture = new Texture2D(graphicsDevice, 1, 1, false, SurfaceFormat.Color);
+            texture.SetData<Color>(new Color[] { Color.White });
+            return texture;
+        }
     }
 }

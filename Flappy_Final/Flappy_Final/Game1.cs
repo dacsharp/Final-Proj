@@ -260,12 +260,20 @@ namespace Flappy_Final
 
                 _player.Update(gameTime);
                 _brickOne.Update(gameTime);
+
+                if (Player.HitTest(_player.getPlayerHitRect(), _brickOne.getBrickRect()))
+                {
+                    _player.die();
+                    _brickOne.currState = Brick.State.Destroyed;
+                }
+
                 if (_player.CheckBulletBrickHit(_brickOne))
                     _brickOne.currState = Brick.State.Destroyed;
                 if(_brickOne.GetCurrState() == Brick.State.OffScreen || _brickOne.GetCurrState() == Brick.State.Destroyed)
                 {
                     _brickOne = new Brick();
                     _brickOne.LoadContent(Content);
+                  
                 }
 
               if( (int)Player.pState.Dead == _player.getCurrState())

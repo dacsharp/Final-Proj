@@ -33,7 +33,7 @@ namespace Flappy_Final
         const int FRAME_COUNT = 3;
         TimeSpan FrameLength = TimeSpan.FromSeconds(0.45 / (double)FRAME_COUNT);
         TimeSpan FrameTimer = TimeSpan.Zero;
-
+        
 
         // USE FOR GETTING TIME BETWEEN SPACE BAR
         private const float _delay = 3; // seconds
@@ -66,6 +66,12 @@ namespace Flappy_Final
         // PLAYER FRAME SIZE
         const int PLAYER_FRAME_SIZE = 48;
 
+        // Player hit rectangle
+        private Rectangle playerRect;
+        public Rectangle getPlayerHitRect()
+        {
+            return playerRect;
+        }
 
 
         public List<Bullet> mBullets = new List<Bullet>();
@@ -141,7 +147,12 @@ namespace Flappy_Final
             brickSound = content.Load<SoundEffect>("BrickSound");
 
 
-
+            playerRect = new Rectangle(
+                    (int)Position.X - FrameSize,
+                    (int)(Position.Y - Size.Height/4.0f + 10),
+                    (int)((float)Size.Width / 3.0f),
+                    (int)((float)Size.Height / 4.0f)
+                    );
             base.LoadContent(content, PLAYER_ASSETNAME);
 
 
@@ -226,7 +237,12 @@ namespace Flappy_Final
             //}
 
 
-
+            playerRect = new Rectangle(
+                    (int)this.Position.X - FrameSize,
+                    (int)(Position.Y - Size.Height / 4.0f + 10),
+                    (int)((float)this.Size.Width / 3.0f),
+                    (int)((float)this.Size.Height / 4.0f)
+                    );
 
             //// update surroundings
             //if (fallingBrick != null)
@@ -367,6 +383,10 @@ namespace Flappy_Final
                     (int)mCurrentFacing * FrameSize, FrameSize, mSpriteTexture.Height / 4);
                 spriteBatch.Draw(mSpriteTexture, Position, spriteRect,
                     Color.White, rotation, Origin, Scale, SpriteEffects.None, 0.0f);
+
+                // Hit box Test
+                //spriteBatch.Draw(textureFillRect(), playerRect, Color.Red);
+
                 //spriteBatch.Draw(textureFillRect(), Position, spriteRect, Color.Red, rotation, Origin, Scale, SpriteEffects.None, 0.0f);
             }
 
@@ -443,24 +463,7 @@ namespace Flappy_Final
 
         }
 
-        //public Rectangle getFallingBrickRect()
-        //{
-        //    if (fallingBrick.Visible)
-        //    {
-        //        //Brick 
-        //        //Each brick is 16 x 50
-        //        int orY = (int)fallingBrick.Origin.Y;
-        //        int orX = (int)fallingBrick.Origin.X;
-        //        Rectangle BrickRect = new Rectangle(
-        //            (int)fallingBrick.GetX(),
-        //            (int)fallingBrick.GetY() - orY - 1,
-        //            (int)16,
-        //            (int)50
-        //            );
-        //        return BrickRect;
-        //    }
-        //    return new Rectangle();
-        //}
+        
         public static bool HitTest(Rectangle r1, Rectangle r2)
         {
             if (Rectangle.Intersect(r1, r2) != Rectangle.Empty)
@@ -581,8 +584,11 @@ namespace Flappy_Final
             Right,
             Up
         }
+        public void die()
+        {
+           mCurrentState = pState.Dead;
+        }
 
-       
         public enum pState
         {
             Flying,
@@ -592,7 +598,7 @@ namespace Flappy_Final
         }
 
         // TEST - spriteBatch.Draw(textureFill(), Rectangle, Color.Red);
-        private Texture2D textureFillRect()
+        public Texture2D textureFillRect()
         {
             Texture2D texture = new Texture2D(graphicsDevice, 1, 1, false, SurfaceFormat.Color);
             texture.SetData<Color>(new Color[] { Color.White });
