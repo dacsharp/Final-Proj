@@ -314,14 +314,22 @@ namespace Flappy_Final
             previousMouseState = mouseState;
 
 
-            //=========================
+
+
+
+
+
+            //=============================================================
             Sky1.Update();
             Sky2.Update();
             Trees1.Update();
             Trees2.Update();
             Stars1.Update();
             Stars2.Update();
-            //===============================
+            //=============================================================
+
+
+
 
 
 
@@ -341,14 +349,25 @@ namespace Flappy_Final
 
             if (_gameState == GameStates.Menu)
             {
-                //===================================
+
+
+
+
+
+                //====================================
                 Sky1.Draw(spriteBatch);
                 Sky2.Draw(spriteBatch);
                 Trees1.Draw(spriteBatch);
                 Trees2.Draw(spriteBatch);
                 Stars1.Draw(spriteBatch);
                 Stars2.Draw(spriteBatch);
-                //====================================
+                //======================================
+
+                //======================================
+
+
+
+
 
                 _menuMain.Draw(spriteBatch);
             }
@@ -367,8 +386,17 @@ namespace Flappy_Final
                 Stars1.Draw(spriteBatch);
                 Stars2.Draw(spriteBatch);
                 //=========================================
+                
+
 
                 _brickOne.Draw(spriteBatch);
+
+                //==========================================
+                TopWall.Draw(spriteBatch);
+                BotWall.Draw(spriteBatch);
+                //===========================================
+
+
                 _player.Draw(spriteBatch);
 
             }
