@@ -257,8 +257,11 @@ namespace Flappy_Final
                 IsMouseVisible = false;
 
                 // play game logic here
+
                 _player.Update(gameTime);
                 _brickOne.Update(gameTime);
+                if (_player.CheckBulletBrickHit(_brickOne))
+                    _brickOne.currState = Brick.State.Destroyed;
                 if(_brickOne.GetCurrState() == Brick.State.OffScreen || _brickOne.GetCurrState() == Brick.State.Destroyed)
                 {
                     _brickOne = new Brick();

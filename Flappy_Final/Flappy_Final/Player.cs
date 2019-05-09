@@ -236,7 +236,7 @@ namespace Flappy_Final
 
         }
 
-        private void CheckBulletBrickHit(Brick brick)
+        public bool CheckBulletBrickHit(Brick brick)
         {
             bool hitBrick = false;
 
@@ -280,6 +280,7 @@ namespace Flappy_Final
                                             bullet.Visible = false;
 
                                             ++score;
+                                            return true;
 
                                         }
                                         // if both ice
@@ -290,6 +291,7 @@ namespace Flappy_Final
                                             bullet.Visible = false;
 
                                             ++score;
+                                            return true;
 
                                         }
                                         else // bullet hit but was wrong type
@@ -302,8 +304,10 @@ namespace Flappy_Final
                                 }
 
                         }
+                    
                 }
             }
+            return false;
         }
 
         //private void CheckPlayerBrickCrash()
