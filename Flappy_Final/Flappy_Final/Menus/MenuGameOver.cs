@@ -16,6 +16,7 @@ namespace Flappy_Final
         private GameStates MenuPrevState;
         // SCORE
         private int _score;
+        private int _lastScore;
         Vector2 _scorePos;
 
         public bool isVisible { get; set; }
@@ -57,6 +58,9 @@ namespace Flappy_Final
         private ContentManager content;
         private GraphicsDeviceManager graphics;
 
+        // Score tracking
+        private ScoreManager _scoreManager;
+
         public void Initialize(SpriteBatch inSpriteBatch, ContentManager content, GraphicsDeviceManager graphics)
         {
             // IsMouseVisible = true;
@@ -76,6 +80,8 @@ namespace Flappy_Final
 
             MenuPrevState = GameStates.Playing;
 
+            _lastScore = -1;
+
         }
 
         public void LoadContent(ContentManager Content)
@@ -88,14 +94,23 @@ namespace Flappy_Final
             // load fonts
             labelFont = Content.Load<SpriteFont>("TimesNewRoman20");
 
+            // load score items
+            _scoreManager = ScoreManager.Load();
 
         }
 
         public void Update(int inScore)
         {
-       
-                _score = inScore;
-            
+
+            _score = inScore;
+            if (inScore != _lastScore )
+            {
+                _scoreManager.Add(new Score { Value = inScore});
+
+                ScoreManager.Save(_scoreManager);
+            }
+
+            _lastScore = inScore;
 
         }
 
@@ -118,10 +133,7 @@ namespace Flappy_Final
                 Color.White, 0.0f, new Vector2(buttonWidth / 2f, buttonHeight / 2f),
                 buttonScale, SpriteEffects.None, 0);
             
-            string scoreMsg = "Score: " + _score.ToString("00000");
-            Vector2 space = labelFont.MeasureString(scoreMsg);
-            spriteBatch.DrawString(labelFont, scoreMsg, new Vector2((ScreenGlobals.SCREEN_WIDTH - space.X) / 2, 40), Color.White);
-
+           
 
             // TESTS FOR RECTS
             //if (mouseClickRect != null)
@@ -154,6 +166,15 @@ namespace Flappy_Final
                 textPositionExit,
                 Color.Black);
 
+            //===============================================
+            // DRAW SCORES
+            // =====================================
+            string scoreMsg = "Score: " + _score.ToString("00000");
+            Vector2 space = labelFont.MeasureString(scoreMsg);
+            spriteBatch.DrawString(labelFont, scoreMsg, new Vector2((ScreenGlobals.SCREEN_WIDTH - space.X) / 2, 40), Color.White);
+            int i = 0;
+            spriteBatch.DrawString(labelFont, "High Scores\n" + string.Join("\n" , _scoreManager.HighScores.Select(c => c.Value).ToArray())
+                , new Vector2(40, 40), Color.White);
 
 
         }
