@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/19.png</SourceFile>
-  <SourceTime>2019-05-03T20:24:02.6157209-07:00</SourceTime>
-  <DestFile>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bin/Windows/Content/PNG/shiny/19.xnb</DestFile>
-  <DestTime>2019-05-09T13:47:37.9158532-07:00</DestTime>
+  <SourceFile>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/19.png</SourceFile>
+  <SourceTime>2019-05-06T20:23:47.9805693-07:00</SourceTime>
+  <DestFile>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bin/Windows/Content/PNG/shiny/19.xnb</DestFile>
+  <DestTime>2019-05-10T14:32:34.3496952-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T08:35:54-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

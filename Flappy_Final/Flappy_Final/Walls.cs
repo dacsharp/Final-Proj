@@ -9,11 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Flappy_Final
 {
-
-
-
-
-
     class Walls
     {
         public Texture2D texture;

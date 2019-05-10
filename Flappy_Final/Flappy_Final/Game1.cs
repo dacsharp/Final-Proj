@@ -53,9 +53,9 @@ namespace Flappy_Final
 
 
    
-        //====================================================================
+        //===============================================================================================
         //BACKGROUND VARIABLES
-        //====================================================================
+        //==============================================================================================
         Sky Sky1;
         Sky Sky2;
 
@@ -67,9 +67,8 @@ namespace Flappy_Final
 
         ScrollingWalls TopWall;
         ScrollingWalls BotWall;
+        //=================================================================================================
 
-
-        //===========================================================================
 
 
         public Game1()
@@ -156,10 +155,13 @@ namespace Flappy_Final
 
             //=======================================================================================================
             //WALLS
-            //=====================================================================================
-            TopWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(230, 85), new Rectangle(160, 0, 32, 96));
-            BotWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(230, 85), new Rectangle(160, 0, 32, 96));
-            //=======================================================================================
+            //=======================================================================================================
+
+            TopWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(1000, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
+            BotWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(1000, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
+
+            
+            //=========================================================================================================
 
         }
 
@@ -208,7 +210,57 @@ namespace Flappy_Final
                 Stars2.rectangle.X = Stars1.rectangle.X + Stars1.texture.Width;
             //==================================================================================
 
-           
+
+
+
+
+
+
+
+            //=================================================================================
+            //PILLAR MOVEMENT LOGIC
+            //=================================================================================
+            Random random = new Random();
+            int[] intervals = new int[] {-200,-180,-160,-140,-120,-100,-80, -60,-40 };
+            int heighty = intervals[random.Next(intervals.Length)];      
+
+            TopWall.texturePos.X += -5;
+            if (TopWall.texturePos.X <= 0)
+            {
+
+                TopWall.texturePos.Y =heighty;
+                TopWall.texturePos.X = ScreenGlobals.SCREEN_WIDTH;
+
+            }
+
+            BotWall.texturePos.X += -5;
+            if (BotWall.texturePos.X <= 0)
+            {
+                BotWall.texturePos.Y = ScreenGlobals.SCREEN_HEIGHT + heighty;
+                BotWall.texturePos.X = ScreenGlobals.SCREEN_WIDTH;
+
+            }
+            //-----------------------------------
+            if (_player.getScore()>=7)
+            {
+                TopWall.rectangle.X = 224;
+                BotWall.rectangle.X = 224;
+            }
+
+            if (_player.getScore() >= 14)
+            {
+                TopWall.rectangle.X = 256;
+                BotWall.rectangle.X = 256;
+            }
+
+
+
+
+
+
+            //=====================================================================================
+
+
 
 
 
@@ -396,17 +448,16 @@ namespace Flappy_Final
                 Stars2.Draw(spriteBatch);
                 //=========================================
                 
-
+          
 
                 _brickOne.Draw(spriteBatch);
+
+                _player.Draw(spriteBatch);
 
                 //==========================================
                 TopWall.Draw(spriteBatch);
                 BotWall.Draw(spriteBatch);
                 //===========================================
-
-
-                _player.Draw(spriteBatch);
 
             }
             else if (_gameState == GameStates.GameOver)
