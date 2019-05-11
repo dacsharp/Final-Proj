@@ -9,10 +9,18 @@
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_xe.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/brick.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/BrickSound.wav</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/buildings-bg.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bullet.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Button.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Columns.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/foreground1.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/myplane_strip3.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/near-buildings-bg.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-bg.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-foreground-trees.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-montain-far.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-mountains.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-trees.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/1.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/10.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/11.png</File>
@@ -54,7 +62,10 @@
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/7.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/8.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/9.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/ruins1.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Sky.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/skyline-a.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/skyline-b.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Stars.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TestButtons/PreHoverExit.png</File>
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TestButtons/PreHoverStart.png</File>
@@ -62,6 +73,17 @@
     <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Trees.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

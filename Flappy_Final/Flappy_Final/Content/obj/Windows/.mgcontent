@@ -4,64 +4,86 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_se.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_xe.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/brick.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/BrickSound.wav</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bullet.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Button.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Columns.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/myplane_strip3.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/1.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/10.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/11.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/11edit.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/12.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/13.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/14.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/15.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/16.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/17.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/18.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/19.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/2.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/20.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/3.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/4.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/5.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/6.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/7.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/8.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/9.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/1.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/10.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/11.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/12.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/13.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/14.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/15.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/16.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/17.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/18.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/19.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/2.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/20.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/3.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/4.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/5.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/6.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/7.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/8.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/9.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Sky.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Stars.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TestButtons/PreHoverExit.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TestButtons/PreHoverStart.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TimesNewRoman20.spritefont</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Trees.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_se.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_xe.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/brick.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/BrickSound.wav</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/buildings-bg.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bullet.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Button.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Columns.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/foreground1.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/myplane_strip3.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/near-buildings-bg.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-bg.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-foreground-trees.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-montain-far.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-mountains.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-trees.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/1.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/10.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/11.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/11edit.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/12.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/13.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/14.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/15.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/16.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/17.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/18.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/19.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/2.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/20.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/3.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/4.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/5.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/6.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/7.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/8.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/shiny/9.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/1.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/10.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/11.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/12.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/13.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/14.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/15.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/16.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/17.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/18.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/19.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/2.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/20.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/3.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/4.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/5.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/6.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/7.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/8.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/PNG/simple/9.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/ruins1.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Sky.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/skyline-a.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/skyline-b.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Stars.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TestButtons/PreHoverExit.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TestButtons/PreHoverStart.png</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/TimesNewRoman20.spritefont</File>
+    <File>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Trees.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

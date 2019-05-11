@@ -65,6 +65,11 @@ namespace Flappy_Final
         Stars Stars1;
         Stars Stars2;
 
+        Trees Trees3;
+        Trees Trees4;
+        
+
+
         ScrollingWalls TopWall;
         ScrollingWalls BotWall;
         //=================================================================================================
@@ -142,16 +147,22 @@ namespace Flappy_Final
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
+
+            string[] skyType = { "Sky", "skyline-a"};
+            string[] treeType = { "Trees", "ruins1" }; 
+            string[] starType = { "Stars", "foreground1" };
+
             //Sky
-            Sky1 = new Sky(Content.Load<Texture2D>("Sky"), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Sky2 = new Sky(Content.Load<Texture2D>("Sky"), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Sky1 = new Sky(Content.Load<Texture2D>(skyType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Sky2 = new Sky(Content.Load<Texture2D>(skyType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
             //Trees
-            Trees1 = new Trees(Content.Load<Texture2D>("Trees"), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Trees2 = new Trees(Content.Load<Texture2D>("Trees"), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Trees1 = new Trees(Content.Load<Texture2D>(treeType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Trees2 = new Trees(Content.Load<Texture2D>(treeType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //Stars
-            Stars1 = new Stars(Content.Load<Texture2D>("Stars"), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Stars2 = new Stars(Content.Load<Texture2D>("Stars"), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Stars1 = new Stars(Content.Load<Texture2D>(starType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Stars2 = new Stars(Content.Load<Texture2D>(starType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //=======================================================================================================
             //WALLS
