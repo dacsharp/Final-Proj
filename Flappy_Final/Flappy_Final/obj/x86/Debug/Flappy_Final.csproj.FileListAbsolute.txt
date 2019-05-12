@@ -167,3 +167,14 @@ C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\skyline-b.xnb
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\foreground1.xnb
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\ruins1.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\buildings-bg.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\foreground1.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\near-buildings-bg.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\parallax-mountain-bg.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\parallax-mountain-foreground-trees.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\parallax-mountain-montain-far.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\parallax-mountain-mountains.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\parallax-mountain-trees.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\ruins1.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\skyline-a.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\skyline-b.xnb

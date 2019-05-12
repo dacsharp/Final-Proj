@@ -44,7 +44,10 @@ namespace Flappy_Final
             rectangle.X -= 3;
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return rectangle;
+        }
     }
 
 

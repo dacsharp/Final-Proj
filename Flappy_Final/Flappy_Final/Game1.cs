@@ -324,12 +324,30 @@ namespace Flappy_Final
                 _player.Update(gameTime);
                 _brickOne.Update(gameTime);
 
+                //====================================
+                // Hit tests.... Player brick
+                //=====================================
                 if (Player.HitTest(_player.getPlayerHitRect(), _brickOne.getBrickRect()))
                 {
                     _player.die();
                     _brickOne.currState = Brick.State.Destroyed;
                 }
-
+                //==================================
+                //  player wall
+                //==================================
+                if(Player.HitTest(_player.getPlayerHitRect(),TopWall.GetRectangle()))
+                {
+                    _player.die();
+                    _brickOne.currState = Brick.State.Destroyed;
+                }
+                if (Player.HitTest(_player.getPlayerHitRect(), BotWall.GetRectangle()))
+                {
+                    _player.die();
+                    _brickOne.currState = Brick.State.Destroyed;
+                }
+                //========================
+                // Bullet Brick
+                //========================
                 if (_player.CheckBulletBrickHit(_brickOne))
                     _brickOne.currState = Brick.State.Destroyed;
                 if(_brickOne.GetCurrState() == Brick.State.OffScreen || _brickOne.GetCurrState() == Brick.State.Destroyed)
