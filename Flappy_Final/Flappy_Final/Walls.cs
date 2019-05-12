@@ -46,7 +46,7 @@ namespace Flappy_Final
 
         public Rectangle GetRectangle()
         {
-            return rectangle;
+            return new Rectangle((int)texturePos.X, (int)texturePos.Y, texture.Height, texture.Width);
         }
     }
 

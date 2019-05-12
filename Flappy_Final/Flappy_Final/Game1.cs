@@ -486,6 +486,9 @@ namespace Flappy_Final
                 //==========================================
                 TopWall.Draw(spriteBatch);
                 BotWall.Draw(spriteBatch);
+
+                // USE THIS TO TEST WHERE CURR RECT IS
+                //spriteBatch.Draw(_player.textureFillRect(), TopWall.GetRectangle(), Color.Red);
                 //===========================================
 
             }
