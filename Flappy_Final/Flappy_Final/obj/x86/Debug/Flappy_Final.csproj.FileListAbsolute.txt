@@ -178,3 +178,7 @@ C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Window
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\ruins1.xnb
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\skyline-a.xnb
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\skyline-b.xnb
+C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\far.xnb
+C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\foregound-merged.xnb
+C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\sand.xnb
+C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\foregoundmerged.xnb

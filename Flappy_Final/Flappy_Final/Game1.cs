@@ -149,27 +149,27 @@ namespace Flappy_Final
 
 
 
-            string[] skyType = { "Sky", "skyline-a"};
-            string[] treeType = { "Trees", "ruins1" }; 
-            string[] starType = { "Stars", "foreground1" };
+            string[] skyType = { "Sky", "far"};
+            string[] treeType = { "Trees", "sand" }; 
+            string[] starType = { "Stars", "foregoundmerged" };
 
             //Sky
-            Sky1 = new Sky(Content.Load<Texture2D>(skyType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Sky2 = new Sky(Content.Load<Texture2D>(skyType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Sky1 = new Sky(Content.Load<Texture2D>(skyType[1]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Sky2 = new Sky(Content.Load<Texture2D>(skyType[1]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
             //Trees
-            Trees1 = new Trees(Content.Load<Texture2D>(treeType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Trees2 = new Trees(Content.Load<Texture2D>(treeType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Trees1 = new Trees(Content.Load<Texture2D>(treeType[1]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Trees2 = new Trees(Content.Load<Texture2D>(treeType[1]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //Stars
-            Stars1 = new Stars(Content.Load<Texture2D>(starType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Stars2 = new Stars(Content.Load<Texture2D>(starType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Stars1 = new Stars(Content.Load<Texture2D>(starType[1]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Stars2 = new Stars(Content.Load<Texture2D>(starType[1]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //=======================================================================================================
             //WALLS
             //=======================================================================================================
 
-            TopWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(1000, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
-            BotWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(1000, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
+            TopWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(200, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
+            BotWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(200, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
 
             
             //=========================================================================================================
@@ -236,7 +236,7 @@ namespace Flappy_Final
             int heighty = intervals[random.Next(intervals.Length)];      
 
             TopWall.texturePos.X += -5;
-            if (TopWall.texturePos.X <= 0)
+            if (TopWall.texturePos.X <= -32)
             {
 
                 TopWall.texturePos.Y =heighty;
@@ -245,7 +245,7 @@ namespace Flappy_Final
             }
 
             BotWall.texturePos.X += -5;
-            if (BotWall.texturePos.X <= 0)
+            if (BotWall.texturePos.X <= -32)
             {
                 BotWall.texturePos.Y = ScreenGlobals.SCREEN_HEIGHT + heighty;
                 BotWall.texturePos.X = ScreenGlobals.SCREEN_WIDTH;
@@ -300,6 +300,12 @@ namespace Flappy_Final
                     {
                         started = true;
                         _player.ResetPlayer();
+
+                        TopWall.texturePos.X = 700;
+                        BotWall.texturePos.X = 700;
+
+                        TopWall.rectangle.X = 160;
+                        BotWall.rectangle.X = 160; 
                     }
                 }
                  // space to start
@@ -308,11 +314,24 @@ namespace Flappy_Final
                     _gameState = GameStates.Playing;
                     _player.ResetPlayer();
 
+                    //--------------------------------
+                    TopWall.texturePos.X = 700;
+                    BotWall.texturePos.X = 700;
+
+                    TopWall.rectangle.X = 160;
+                    BotWall.rectangle.X = 160;
+
                 }
                  if (_gameState == GameStates.Playing)
                 {
                     _menuMain.MenuCurrState = GameStates.Playing;
                     _player.ResetPlayer();
+
+                    TopWall.texturePos.X = 700;
+                    BotWall.texturePos.X = 700;
+
+                    TopWall.rectangle.X = 160;
+                    BotWall.rectangle.X = 160;
                 }
             }
             else if (_gameState == GameStates.Playing)
@@ -360,6 +379,7 @@ namespace Flappy_Final
               if( (int)Player.pState.Dead == _player.getCurrState())
                 {
                    _gameState = GameStates.GameOver;
+
                 }
 
             }
@@ -371,6 +391,7 @@ namespace Flappy_Final
             {
                 IsMouseVisible = true;
                 _menuGameOver.Update(_player.getScore());
+
                 // clicked to start
                 if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                 {
@@ -378,8 +399,15 @@ namespace Flappy_Final
                     _gameState = _menuGameOver.MouseClicked(mouseState.X, mouseState.Y);
                     if (_gameState == GameStates.Menu)
                     {
+
                         started = false;
+
+                       
                     }
+
+
+
+
                 }
                 // space to start
                 else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
