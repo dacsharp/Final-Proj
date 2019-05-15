@@ -15,9 +15,11 @@
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Button.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Columns.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/far.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/FireBrickedit.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/foregoundmerged.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/foregound-merged.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/foreground1.png</File>
+    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/iceBrickedit.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/myplane_strip3.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/near-buildings-bg.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/parallax-mountain-bg.png</File>
@@ -79,6 +81,8 @@
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Trees.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
