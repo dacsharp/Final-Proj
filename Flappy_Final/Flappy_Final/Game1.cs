@@ -561,6 +561,13 @@ namespace Flappy_Final
             }
             else if (_gameState == GameStates.GameOver)
             {
+                Sky1.Draw(spriteBatch);
+                Sky2.Draw(spriteBatch);
+                Trees1.Draw(spriteBatch);
+                Trees2.Draw(spriteBatch);
+                Stars1.Draw(spriteBatch);
+                Stars2.Draw(spriteBatch);
+
                 _menuGameOver.Draw(spriteBatch);
             }
             spriteBatch.End();
