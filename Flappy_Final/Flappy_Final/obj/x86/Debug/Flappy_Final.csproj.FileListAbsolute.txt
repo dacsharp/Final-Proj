@@ -190,3 +190,5 @@ C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Window
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\shoot.xnb
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\iceBrickedit.xnb
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\FireBrickedit.xnb
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.wma
+C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.xnb
