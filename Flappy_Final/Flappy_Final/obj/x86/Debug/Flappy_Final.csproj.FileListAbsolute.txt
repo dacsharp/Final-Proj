@@ -201,3 +201,5 @@ C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.wma
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.xnb
 >>>>>>> b4d88a883f21590463015ffb61944a6cb14e0778
+C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.wma
+C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.xnb
