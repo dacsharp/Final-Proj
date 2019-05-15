@@ -166,6 +166,7 @@ namespace Flappy_Final
             //Sky
             Sky1 = new Sky(Content.Load<Texture2D>(skyType[backgroundChose]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
             Sky2 = new Sky(Content.Load<Texture2D>(skyType[backgroundChose]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+
             //Trees
             Trees1 = new Trees(Content.Load<Texture2D>(treeType[backgroundChose]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
             Trees2 = new Trees(Content.Load<Texture2D>(treeType[backgroundChose]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
@@ -268,7 +269,6 @@ namespace Flappy_Final
             {
                 TopWall.rectangle.X = 224;
                 BotWall.rectangle.X = 224;
-
             }
 
             if (_player.getScore() >= 14)
