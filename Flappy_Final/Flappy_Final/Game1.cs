@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using System;
+using Microsoft.Xna.Framework.Media;
 
 namespace Flappy_Final
 {
@@ -26,8 +27,8 @@ namespace Flappy_Final
     {
         public GraphicsDeviceManager graphics { get; }
         SpriteBatch spriteBatch;
-
-
+        // MUSIC
+        Song song { get; set; }
         //=====================================================================
         // MENU AND STATES
         //=====================================================================
@@ -36,6 +37,7 @@ namespace Flappy_Final
         private MenuMain _menuMain;
         private MenuGameOver _menuGameOver;
         private bool started { get; set; }
+        private bool muted { get; set; }
         //=====================================================================
         private MouseState mouseState;
         private MouseState previousMouseState;
@@ -101,6 +103,7 @@ namespace Flappy_Final
             // Player and Interactive Environment
             _player = new Player(spriteBatch);
             _brickOne = new Brick();
+            muted = false;
 
             
 
@@ -138,8 +141,14 @@ namespace Flappy_Final
             _menuGameOver.LoadContent(Content);
             _brickOne.LoadContent(Content);
 
+            // =============
+            // Background music
+            //=============
+            Song song = Content.Load<Song>("backgroundmusic");  // Put the name of your song here instead of "song_title"
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
 
-        
+
             //=======================================================================================================
             //BACKGROUND CONTENT
             //=======================================================================================================
@@ -223,7 +232,7 @@ namespace Flappy_Final
             if (Stars2.rectangle.X + Stars2.texture.Width <= 0)
                 Stars2.rectangle.X = Stars1.rectangle.X + Stars1.texture.Width;
             //==================================================================================
-
+           
 
 
 
@@ -291,6 +300,26 @@ namespace Flappy_Final
 
 
             //  Update method for menus here when menus exist
+            //====================================================
+            // sound
+            //==============================================
+            if (keyboardState.IsKeyDown(Keys.M) && !previousKeyboardState.IsKeyDown(Keys.M))
+            {
+                if (muted == false)
+                {
+                    _player.muted = true;
+                    muted = true;
+                    MediaPlayer.IsMuted = true ;
+                }
+                else
+                {
+                    _player.muted = false;
+                    muted = false;
+                    MediaPlayer.IsMuted = false;
+
+                }
+            }
+
 
             if (_gameState == GameStates.Menu)
             {

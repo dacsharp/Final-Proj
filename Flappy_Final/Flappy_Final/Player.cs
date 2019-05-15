@@ -74,6 +74,9 @@ namespace Flappy_Final
             return playerRect;
         }
 
+        //SOUND
+        public bool muted { get; set; }
+        const float MAX_VOL = 1.0f;
 
         public List<Bullet> mBullets = new List<Bullet>();
         private sbyte bulletFlip = 1;
@@ -92,7 +95,8 @@ namespace Flappy_Final
         public Player(SpriteBatch inSpritebatch)
         {
             spriteBatch = inSpritebatch;
-            Stationary = true; 
+            Stationary = true;
+            muted = false;
         }
 
         public void ResetPlayer()
@@ -297,7 +301,7 @@ namespace Flappy_Final
                                         
                                         if (bullet.isFire() == true && brick.isFire == true)
                                         {
-                                            PlaySound(brickSound);
+                                            PlaySound(brickSound, MAX_VOL, muted);
                                             brick.Visible = false;
                                             bullet.Visible = false;
 
@@ -308,7 +312,7 @@ namespace Flappy_Final
                                         // if both ice
                                         else if ((!bullet.isFire() == true) && (!brick.isFire == true))
                                         {
-                                            PlaySound(brickSound);
+                                            PlaySound(brickSound, MAX_VOL, muted);
                                             brick.Visible = false;
                                             bullet.Visible = false;
 
@@ -549,7 +553,7 @@ namespace Flappy_Final
                     mBullets.Add(aBullet);
 
                     bulletFlip *= -1;
-                    PlaySound(shootSound, 0.5f);
+                    PlaySound(shootSound, 0.5f, muted);
                 }
             }
         }
@@ -562,13 +566,17 @@ namespace Flappy_Final
             return mDirection;
         }
 
-        public static void PlaySound(SoundEffect sound, float _volume = 1.0f) // default is max volume
+        public static void PlaySound(SoundEffect sound, float _volume = 1.0f, bool  _muted = false) // default is max volume
         {
-            float volume = _volume;
-            float pitch = 0.0f;
-            float pan = 0.0f;
-            sound.Play(volume, pitch, pan);
+            if (_muted == false)
+            {
+                float volume = _volume;
+                float pitch = 0.0f;
+                float pan = 0.0f;
+                sound.Play(volume, pitch, pan);
+            }
         }
+
 
 
         public int getCurrState()
