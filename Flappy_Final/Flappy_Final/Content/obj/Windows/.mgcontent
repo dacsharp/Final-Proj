@@ -86,7 +86,6 @@
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_se.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/!$ReBat_xe.png</File>
-    <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/backgroundMusic.mp3</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/brick.png</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/BrickSound.wav</File>
     <File>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/brickSound_2.wav</File>
@@ -237,10 +236,13 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+<<<<<<< HEAD
     <File xsi:nil="true" />
 <<<<<<< HEAD
     <File xsi:nil="true" />
 =======
 >>>>>>> b4d88a883f21590463015ffb61944a6cb14e0778
+=======
+>>>>>>> parent of b4d88a8... background music added
   </DestFiles>
 </SourceFileCollection>

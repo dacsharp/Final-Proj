@@ -191,6 +191,7 @@ C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Window
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\iceBrickedit.xnb
 C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\FireBrickedit.xnb
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\brickSound_2.xnb
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\FireBrickedit.xnb
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\iceBrickedit.xnb
@@ -203,3 +204,5 @@ C:\Users\Donner\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Window
 >>>>>>> b4d88a883f21590463015ffb61944a6cb14e0778
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.wma
 C:\Users\User\Documents\GitHub\Final-Proj\Flappy_Final\Flappy_Final\bin\Windows\x86\Debug\Content\backgroundMusic.xnb
+=======
+>>>>>>> parent of b4d88a8... background music added
