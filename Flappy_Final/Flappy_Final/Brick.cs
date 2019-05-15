@@ -52,7 +52,8 @@ namespace Flappy_Final
             return nextValue;
         }
 
-        private Texture2D imgBrick; // cached image of brick
+        private Texture2D imgFireBrick; // cached image of brick
+        private Texture2D imgIceBrick;
         private SpriteBatch spriteBatch; // allows us to write on backbuffer when we need to draw self
                                          //        private ContentManager content;
         private Rectangle brickRect;
@@ -105,12 +106,14 @@ namespace Flappy_Final
         }
         public void LoadContent(ContentManager content)
         {
-            this.AssetName = "brick";
-            imgBrick = content.Load<Texture2D>(AssetName);
-            Size = new Rectangle(0, 0, (int)(imgBrick.Width * Scale), (int)(imgBrick.Height * Scale));
+            this.AssetName = "FireBrickedit";
+
+            imgFireBrick = content.Load<Texture2D>(AssetName);
+            imgIceBrick = content.Load<Texture2D>("iceBrickEdit");
+            Size = new Rectangle(0, 0, (int)(imgFireBrick.Width * Scale), (int)(imgFireBrick.Height * Scale));
             // Origin of the sprite
-            float orX = (float)imgBrick.Width / 2;
-            float orY = (float)imgBrick.Height / 2;
+            float orX = (float)imgFireBrick.Width / 2;
+            float orY = (float)imgFireBrick.Height / 2;
             Origin = new Vector2(orX, orY);
             Visible = true;
 
@@ -129,10 +132,18 @@ namespace Flappy_Final
 
             if (currState == State.Falling && Visible)
             {
-                spriteBatch.Draw(imgBrick, new Vector2(X, Y),
-                    null, color, 0.0f,
-                    new Vector2(Width / 2f, Height / 2f), 1.0f, SpriteEffects.None, 0);
-
+                if (isFire == true)
+                {
+                    spriteBatch.Draw(imgFireBrick, new Vector2(X, Y),
+                      null, Color.White, 0.0f,
+                      new Vector2(Width / 2f, Height / 2f), 1.0f, SpriteEffects.None, 0);
+                }
+                else
+                {
+                    spriteBatch.Draw(imgIceBrick, new Vector2(X, Y),
+                      null, Color.White, 0.0f,
+                      new Vector2(Width / 2f, Height / 2f), 1.0f, SpriteEffects.None, 0);
+                }
 
                 //spriteBatch.Draw(textureFillRect(), brickRect, Color.Green);
             }

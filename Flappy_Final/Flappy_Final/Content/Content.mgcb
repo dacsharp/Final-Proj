@@ -67,6 +67,12 @@
 /processorParam:Quality=Best
 /build:BrickSound.wav
 
+#begin brickSound_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:brickSound_2.wav
+
 #begin buildings-bg.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -127,6 +133,18 @@
 /processorParam:TextureFormat=Color
 /build:far.png
 
+#begin FireBrickedit.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:FireBrickedit.png
+
 #begin foregoundmerged.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -162,6 +180,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:foreground1.png
+
+#begin iceBrickedit.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:iceBrickedit.png
 
 #begin myplane_strip3.png
 /importer:TextureImporter
@@ -762,6 +792,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:sand.png
+
+#begin shoot.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:shoot.wav
 
 #begin Sky.png
 /importer:TextureImporter
