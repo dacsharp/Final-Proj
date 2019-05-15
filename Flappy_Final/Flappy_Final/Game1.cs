@@ -72,6 +72,8 @@ namespace Flappy_Final
 
         ScrollingWalls TopWall;
         ScrollingWalls BotWall;
+
+        int backgroundChose = 0;
         //=================================================================================================
 
 
@@ -154,15 +156,15 @@ namespace Flappy_Final
             string[] starType = { "Stars", "foregoundmerged" };
 
             //Sky
-            Sky1 = new Sky(Content.Load<Texture2D>(skyType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Sky2 = new Sky(Content.Load<Texture2D>(skyType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Sky1 = new Sky(Content.Load<Texture2D>(skyType[backgroundChose]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Sky2 = new Sky(Content.Load<Texture2D>(skyType[backgroundChose]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
             //Trees
-            Trees1 = new Trees(Content.Load<Texture2D>(treeType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Trees2 = new Trees(Content.Load<Texture2D>(treeType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Trees1 = new Trees(Content.Load<Texture2D>(treeType[backgroundChose]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Trees2 = new Trees(Content.Load<Texture2D>(treeType[backgroundChose]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //Stars
-            Stars1 = new Stars(Content.Load<Texture2D>(starType[0]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
-            Stars2 = new Stars(Content.Load<Texture2D>(starType[0]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Stars1 = new Stars(Content.Load<Texture2D>(starType[backgroundChose]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
+            Stars2 = new Stars(Content.Load<Texture2D>(starType[backgroundChose]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
 
             //=======================================================================================================
             //WALLS
@@ -171,8 +173,10 @@ namespace Flappy_Final
             TopWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(-200, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
             BotWall = new ScrollingWalls(Content.Load<Texture2D>("Columns"), new Vector2(-200, ScreenGlobals.SCREEN_HEIGHT), new Rectangle(160, 0, 32, 96));
 
-            
+
             //=========================================================================================================
+
+            
 
         }
 
@@ -222,7 +226,7 @@ namespace Flappy_Final
             //==================================================================================
 
 
-
+            
 
 
 
@@ -469,9 +473,6 @@ namespace Flappy_Final
 
             if (_gameState == GameStates.Menu)
             {
-
-
-
 
 
                 //====================================
