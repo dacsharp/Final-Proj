@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Stars.png</SourceFile>
-  <SourceTime>2019-05-01T21:33:55.8203324-07:00</SourceTime>
-  <DestFile>C:/Users/User/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bin/Windows/Stars.xnb</DestFile>
-  <DestTime>2019-05-15T14:29:47.1654766-07:00</DestTime>
+  <SourceFile>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/Stars.png</SourceFile>
+  <SourceTime>2019-05-01T21:58:25.9989291-07:00</SourceTime>
+  <DestFile>C:/Users/Donner/Documents/GitHub/Final-Proj/Flappy_Final/Flappy_Final/Content/bin/Windows/Stars.xnb</DestFile>
+  <DestTime>2019-05-15T15:50:14.8613223-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T08:35:54-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

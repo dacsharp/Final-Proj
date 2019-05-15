@@ -49,6 +49,12 @@
 /processorParam:TextureFormat=Color
 /build:!$ReBat_xe.png
 
+#begin BackgroundMusic.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:BackgroundMusic.mp3
+
 #begin brick.png
 /importer:TextureImporter
 /processor:TextureProcessor

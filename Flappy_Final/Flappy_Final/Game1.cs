@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using System;
+using Microsoft.Xna.Framework.Media;
 
 namespace Flappy_Final
 {
@@ -20,12 +21,17 @@ namespace Flappy_Final
         GameOver,
         Exiting
     }
+
     
+
+
 
     public class Game1 : Game
     {
         public GraphicsDeviceManager graphics { get; }
         SpriteBatch spriteBatch;
+
+        private Song song { get; set; }
 
 
         //=====================================================================
@@ -103,7 +109,6 @@ namespace Flappy_Final
             _player = new Player(spriteBatch);
             _brickOne = new Brick();
             muted = false;
-
             
 
         }
@@ -133,7 +138,10 @@ namespace Flappy_Final
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            song = Content.Load<Song>("BackgroundMusic");
+        
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
             // TODO: use this.Content to load your game content here
             _menuMain.LoadContent(Content);
             _player.LoadContent(Content, ScreenGlobals.PLAYER_ASSETNAME);
@@ -296,18 +304,21 @@ namespace Flappy_Final
             //====================================================
             // sound
             //==============================================
-            if (keyboardState.IsKeyDown(Keys.M) && !previousKeyboardState.IsKeyDown(Keys.M))
+            if (keyboardState.IsKeyDown(Keys.M) && !(previousKeyboardState.IsKeyDown(Keys.M)))
             {
                 if (muted == false)
                 {
                     _player.muted = true;
                     muted = true;
+                    MediaPlayer.IsMuted = true;
                 }
                 else
                 {
                     _player.muted = false;
                     muted = false;
+                    MediaPlayer.IsMuted = false;
                 }
+                
             }
 
 
@@ -332,7 +343,7 @@ namespace Flappy_Final
                     }
                 }
                  // space to start
-                 else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
+                 else if (keyboardState.IsKeyDown(Keys.Space) && !(previousKeyboardState.IsKeyDown(Keys.Space)))
                 {
                     _gameState = GameStates.Playing;
                     _player.ResetPlayer();
@@ -456,6 +467,7 @@ namespace Flappy_Final
                 
             }
             previousMouseState = mouseState;
+            previousKeyboardState = keyboardState;
 
 
 
