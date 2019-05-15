@@ -36,6 +36,7 @@ namespace Flappy_Final
         private MenuMain _menuMain;
         private MenuGameOver _menuGameOver;
         private bool started { get; set; }
+        private bool muted { get; set; }
         //=====================================================================
         private MouseState mouseState;
         private MouseState previousMouseState;
@@ -102,6 +103,7 @@ namespace Flappy_Final
             // Player and Interactive Environment
             _player = new Player(spriteBatch);
             _brickOne = new Brick();
+            muted = false;
 
             
 
@@ -220,7 +222,7 @@ namespace Flappy_Final
             if (Stars2.rectangle.X + Stars2.texture.Width <= 0)
                 Stars2.rectangle.X = Stars1.rectangle.X + Stars1.texture.Width;
             //==================================================================================
-
+           
 
 
 
@@ -288,6 +290,23 @@ namespace Flappy_Final
 
 
             //  Update method for menus here when menus exist
+            //====================================================
+            // sound
+            //==============================================
+            if (keyboardState.IsKeyDown(Keys.M) && !previousKeyboardState.IsKeyDown(Keys.M))
+            {
+                if (muted == false)
+                {
+                    _player.muted = true;
+                    muted = true;
+                }
+                else
+                {
+                    _player.muted = false;
+                    muted = false;
+                }
+            }
+
 
             if (_gameState == GameStates.Menu)
             {
