@@ -56,6 +56,7 @@ namespace Flappy_Final
         GamePadState mPreviousGamepadState;
 
         private SoundEffect brickSound;
+        private SoundEffect shootSound;
 
         private int FrameNum = 0;
 
@@ -148,7 +149,8 @@ namespace Flappy_Final
            
 
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
-            brickSound = content.Load<SoundEffect>("BrickSound");
+            brickSound = content.Load<SoundEffect>("BrickSound_2");
+            shootSound = content.Load<SoundEffect>("Shoot");
 
 
             playerRect = new Rectangle(
@@ -547,6 +549,7 @@ namespace Flappy_Final
                     mBullets.Add(aBullet);
 
                     bulletFlip *= -1;
+                    PlaySound(shootSound, 0.5f);
                 }
             }
         }
@@ -559,9 +562,9 @@ namespace Flappy_Final
             return mDirection;
         }
 
-        public static void PlaySound(SoundEffect sound)
+        public static void PlaySound(SoundEffect sound, float _volume = 1.0f) // default is max volume
         {
-            float volume = 1;
+            float volume = _volume;
             float pitch = 0.0f;
             float pan = 0.0f;
             sound.Play(volume, pitch, pan);
