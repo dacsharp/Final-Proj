@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using System;
-using Microsoft.Xna.Framework.Media;
 
 namespace Flappy_Final
 {
@@ -27,8 +26,8 @@ namespace Flappy_Final
     {
         public GraphicsDeviceManager graphics { get; }
         SpriteBatch spriteBatch;
-        // MUSIC
-        Song song { get; set; }
+
+
         //=====================================================================
         // MENU AND STATES
         //=====================================================================
@@ -141,14 +140,8 @@ namespace Flappy_Final
             _menuGameOver.LoadContent(Content);
             _brickOne.LoadContent(Content);
 
-            // =============
-            // Background music
-            //=============
-            Song song = Content.Load<Song>("backgroundmusic");  // Put the name of your song here instead of "song_title"
-            MediaPlayer.Play(song);
-            MediaPlayer.IsRepeating = true;
 
-
+        
             //=======================================================================================================
             //BACKGROUND CONTENT
             //=======================================================================================================
@@ -309,14 +302,11 @@ namespace Flappy_Final
                 {
                     _player.muted = true;
                     muted = true;
-                    MediaPlayer.IsMuted = true ;
                 }
                 else
                 {
                     _player.muted = false;
                     muted = false;
-                    MediaPlayer.IsMuted = false;
-
                 }
             }
 
