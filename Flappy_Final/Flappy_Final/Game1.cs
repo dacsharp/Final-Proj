@@ -65,10 +65,7 @@ namespace Flappy_Final
         Stars Stars1;
         Stars Stars2;
 
-        Trees Trees3;
-        Trees Trees4;
-        
-
+        Texture2D controls;
 
         ScrollingWalls TopWall;
         ScrollingWalls BotWall;
@@ -155,6 +152,8 @@ namespace Flappy_Final
             string[] treeType = { "Trees", "sand" }; 
             string[] starType = { "Stars", "foregoundmerged" };
 
+            controls = Content.Load<Texture2D>("ControlsGame");
+
             //Sky
             Sky1 = new Sky(Content.Load<Texture2D>(skyType[backgroundChose]), new Rectangle(0, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
             Sky2 = new Sky(Content.Load<Texture2D>(skyType[backgroundChose]), new Rectangle(ScreenGlobals.SCREEN_WIDTH, 0, ScreenGlobals.SCREEN_WIDTH, ScreenGlobals.SCREEN_HEIGHT));
@@ -175,7 +174,7 @@ namespace Flappy_Final
 
 
             //=========================================================================================================
-
+           
             
 
         }
@@ -226,9 +225,9 @@ namespace Flappy_Final
             //==================================================================================
 
 
-            
 
 
+           
 
 
 
@@ -300,7 +299,6 @@ namespace Flappy_Final
                  if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                 {
 
-                    
                     _gameState = _menuMain.MouseClicked(mouseState.X, mouseState.Y);
                     if (_gameState == GameStates.Playing)
                     {
@@ -391,6 +389,7 @@ namespace Flappy_Final
             }
             else if (_gameState == GameStates.Paused)
             {
+
                 ;
             }
             else if (_gameState == GameStates.GameOver)
@@ -406,6 +405,7 @@ namespace Flappy_Final
                     if (_gameState == GameStates.Menu)
                     {
 
+
                         started = false;
 
                        
@@ -418,6 +418,7 @@ namespace Flappy_Final
                 // space to start
                 else if (keyboardState.IsKeyDown(Keys.Space) && !previousKeyboardState.IsKeyDown(Keys.Space))
                 {
+
                     _gameState = GameStates.Menu;
 
                 }
@@ -450,6 +451,8 @@ namespace Flappy_Final
             Trees2.Update();
             Stars1.Update();
             Stars2.Update();
+
+            
             //=============================================================
 
 
@@ -471,8 +474,10 @@ namespace Flappy_Final
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
+
             if (_gameState == GameStates.Menu)
             {
+                
 
 
                 //====================================
@@ -489,7 +494,7 @@ namespace Flappy_Final
 
 
 
-
+                spriteBatch.Draw(controls, new Rectangle(0, 359, 300, 180), Color.White);
                 _menuMain.Draw(spriteBatch);
             }
             else if (_gameState == GameStates.Playing)

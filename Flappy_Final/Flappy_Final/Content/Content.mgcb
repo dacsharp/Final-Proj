@@ -121,6 +121,18 @@
 /processorParam:TextureFormat=Color
 /build:Columns.png
 
+#begin ControlsGame.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ControlsGame.png
+
 #begin far.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -846,6 +858,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Stars.png
+
+#begin TestButtons/ControlsGame.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:TestButtons/ControlsGame.png
 
 #begin TestButtons/PreHoverExit.png
 /importer:TextureImporter
