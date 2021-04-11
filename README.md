@@ -59,9 +59,8 @@ XNA
  ### Installation  
 
  1. Clone the repo  
-Open Terminal.  
-Change the current working directory to the location where you want the cloned directory.  
-Then enter the command: 
+Open Terminal. Change the current working directory to the location where you want the cloned directory.  
+Then enter the command:  
  ```sh  
  git clone https://github.com/dacsharp/Final-Proj.git   
  ```  
