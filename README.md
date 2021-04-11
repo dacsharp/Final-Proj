@@ -77,7 +77,7 @@ A demo of the running game can be found on youtube [here](https://youtu.be/Fn6ii
 
  Donner Hanson -  hanso127@mail.chapman.edu
 
- Project Link: [https://github.com/donnerhanson/String_Automata_C-Plus-Plus](https://github.com/donnerhanson/String_Automata_C-Plus-Plus)  
+ Project Link: [https://github.com/dacsharp/Final-Proj/](https://github.com/dacsharp/Final-Proj/)  
 
  <!-- MARKDOWN LINKS & IMAGES -->
  <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
