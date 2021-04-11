@@ -25,7 +25,7 @@
  <!-- TABLE OF CONTENTS -->
  ## Table of Contents
 
- * [About the Programs](#about-the-programs)
+ * [About the Program](#about-the-program)
  * [Getting Started](#getting-started)
    * [Prerequisites](#prerequisites)
    * [Installation](#installation)
@@ -36,7 +36,7 @@
 
 
  <!-- ABOUT THE PROGRAM -->
- ## About The Programs
+ ## About The Program
 
 The game is a simple Flappy Bird and Mario mashup. As the user navigates through pipes they have to shoot the bricks falling from the sky. The bricks are color coded as Fire and Ice and must be hit with the respective bullets that the player can shoot. 
 
